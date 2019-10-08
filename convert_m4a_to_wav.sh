@@ -8,9 +8,12 @@ IFS_BACKUP=$IFS
 IFS=$'\n'
 
 for srcfile in `\find $1 -maxdepth 1 -type f`;do
-	outfilename=`basename $srcfile .m4a`
-	outfilepath=$out"/"$outfilename".wav"
+	rawfilename=`basename $srcfile .m4a`
+	rawfilepath="./.tmp/"$rawfilename".wav"
+	echo $rawfilepath
+	afconvert -f WAVE -d LEI24 $srcfile $rawfilepath
+	outfilepath=$out"/"$rawfilename".wav"
 	echo $outfilepath
-	afconvert -f WAVE -d LEI24 $srcfile $outfilepath
+	sox $rawfilepath -b 16 $outfilepath channels 1 rate 16k
 done
 IFS=$IFS_BACKUP
