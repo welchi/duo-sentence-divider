@@ -11,6 +11,6 @@ for srcfile in `\find $1 -maxdepth 1 -type f`;do
 	outfilename=`basename $srcfile .m4a`
 	outfilepath=$out"/"$outfilename".wav"
 	echo $outfilepath
-	afconvert -f WAVE -d LEI16 $srcfile $outfilepath
+	afconvert -f WAVE -d LEI24 $srcfile $outfilepath
 done
 IFS=$IFS_BACKUP
