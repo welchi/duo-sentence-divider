@@ -13,9 +13,3 @@ cd julius-4.5
 make
 sudo make install
 ```
-
-soxをインストール
-```
-sudo chown -R $(whoami) /usr/local/lib/pkgconfig
-brew install sox
-```
