@@ -2,6 +2,8 @@
 DUO3.0(復習編)の英文を分割する
 
 ## Usage
+Mac前提
+
 Juliusをダウンロードしてインストールしておく(adintool用)
 https://github.com/julius-speech/julius/releases
 ```
@@ -10,4 +12,9 @@ cd julius-4.5
 ./configure
 make
 sudo make install
+```
+
+ffmpegをインストール
+```
+brew install ffmpeg
 ```
