@@ -14,7 +14,8 @@ make
 sudo make install
 ```
 
-ffmpegをインストール
+soxをインストール
 ```
-brew install ffmpeg
+sudo chown -R $(whoami) /usr/local/lib/pkgconfig
+brew install sox
 ```
